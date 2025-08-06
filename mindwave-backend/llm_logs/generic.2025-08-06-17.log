@@ -1,0 +1,150 @@
+  2025-08-06T17:35:05.938145Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 1302
+  messages:
+
+[1mSystem[0m:
+"You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+[1mAssistant[0m:
+"[\n  { \"question\": \"Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\" },\n  { \"question\": \"Describe the challenges of ensuring secure data transmission in IoT networks and suggest two potential solutions.\" },\n  { \"question\": \"How does e..."
+
+[1mUser[0m:
+"You are an expert in general software engineering. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.\n\nQ1: Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\nA1: MQTT is..."
+
+[1mAssistant[0m:
+"```json\n[\n  {\n    \"question\": \"Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\",\n    \"score\": 9,\n    \"feedback\": \"Excellent explanation of MQTT's lightweight nature and publish-subscribe model, with clear comparisons to HTTP. Could b..."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T17:35:16.581132Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "```json\n[\n  { \"question\": \"Explain how CoAP (Constrained Application Protocol) optimizes communication for IoT devices compared to traditional HTTP, and describe a use case where it is particularly advantageous.\" },\n  { \"question\": \"What are the key security vulnerabilities in IoT device firmware, and how can secure boot mechanisms help mitigate these risks?\" },\n  { \"question\": \"Describe the trade-offs between using a centralized cloud architecture versus a decentralized fog computing approach in large-scale IoT deployments.\" },\n  { \"question\": \"How do IoT over cellular networks (e.g., LTE-M, NB-IoT) differ from LPWAN technologies like LoRaWAN in terms of power consumption, cost, and scalability?\" },\n  { \"question\": \"Explain the role of digital twins in IoT systems, and discuss one industry where their implementation provides significant operational benefits.\" }\n]\n```"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 10.645676621s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 1297
+    completion_tokens: 180
+    total_tokens: 1477
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+
+  2025-08-06T17:45:31.544887Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 2037
+  messages:
+
+[1mSystem[0m:
+"You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+[1mAssistant[0m:
+"[\n  { \"question\": \"Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\" },\n  { \"question\": \"Describe the challenges of ensuring secure data transmission in IoT networks and suggest two potential solutions.\" },\n  { \"question\": \"How does e..."
+
+[1mUser[0m:
+"You are an expert in general software engineering. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.\n\nQ1: Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\nA1: MQTT is..."
+
+[1mAssistant[0m:
+"```json\n[\n  {\n    \"question\": \"Explain the role of MQTT in IoT communication and how it differs from HTTP in terms of efficiency and scalability.\",\n    \"score\": 9,\n    \"feedback\": \"Excellent explanation of MQTT's lightweight nature and publish-subscribe model, with clear comparisons to HTTP. Could b..."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+[1mAssistant[0m:
+"```json\n[\n  { \"question\": \"Explain how CoAP (Constrained Application Protocol) optimizes communication for IoT devices compared to traditional HTTP, and describe a use case where it is particularly advantageous.\" },\n  { \"question\": \"What are the key security vulnerabilities in IoT device firmware, a..."
+
+[1mUser[0m:
+"You are an expert in general software engineering. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.\n\nQ1: Explain how CoAP (Constrained Application Protocol) optimizes communication for IoT devices compared to traditional HTTP, and ..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T17:45:47.941884Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "```json\n[\n  {\n    \"question\": \"Explain how CoAP (Constrained Application Protocol) optimizes communication for IoT devices compared to traditional HTTP, and describe a use case where it is particularly advantageous.\",\n    \"score\": 9,\n    \"feedback\": \"Excellent explanation of CoAP's advantages over HTTP, with a clear use case. Adding a brief mention of CoAP's RESTful architecture would make it even more comprehensive.\"\n  },\n  {\n    \"question\": \"What are the key security vulnerabilities in IoT device firmware, and how can secure boot mechanisms help mitigate these risks?\",\n    \"score\": 8,\n    \"feedback\": \"Good coverage of firmware vulnerabilities and the role of secure boot. Including an example of a real-world firmware exploit might make the explanation more relatable.\"\n  },\n  {\n    \"question\": \"Describe the trade-offs between using a centralized cloud architecture versus a decentralized fog computing approach in large-scale IoT deployments.\",\n    \"score\": 9,\n    \"feedback\": \"Strong comparison of cloud and fog computing trade-offs. Mentioning a specific use case (e.g., industrial IoT) would provide additional context.\"\n  },\n  {\n    \"question\": \"How do IoT over cellular networks (e.g., LTE-M, NB-IoT) differ from LPWAN technologies like LoRaWAN in terms of power consumption, cost, and scalability?\",\n    \"score\": 8,\n    \"feedback\": \"Good differentiation between cellular IoT and LPWAN technologies. Adding a brief mention of deployment scenarios (e.g., urban vs. rural) would enhance the answer.\"\n  },\n  {\n    \"question\": \"Explain the role of digital twins in IoT systems, and discuss one industry where their implementation provides significant operational benefits.\",\n    \"score\": 10,\n    \"feedback\": \"Exceptional explanation of digital twins and their benefits in manufacturing. The answer is clear, concise, and well-supported with practical insights.\"\n  }\n]\n```"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 16.400567575s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 2029
+    completion_tokens: 401
+    total_tokens: 2430
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+

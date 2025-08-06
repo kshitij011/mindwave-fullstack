@@ -1,0 +1,198 @@
+  2025-08-06T14:28:21.671549Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 118
+  messages:
+
+[1mSystem[0m:
+"You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T14:28:28.833588Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "[\n  { \"question\": \"What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the other?\" },\n  { \"question\": \"How would you optimize power consumption in a battery-operated IoT device without compromising functionality?\" },\n  { \"question\": \"Explain the challenges of implementing end-to-end security in IoT systems and propose a solution.\" },\n  { \"question\": \"What strategies would you use to handle data from millions of IoT devices in real-time while ensuring low latency?\" },\n  { \"question\": \"How do you approach firmware updates for IoT devices deployed in remote or hard-to-reach locations?\" }\n]"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 7.162553705s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 111
+    completion_tokens: 139
+    total_tokens: 250
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+
+  2025-08-06T14:36:24.415038Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 784
+  messages:
+
+[1mSystem[0m:
+"You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+[1mAssistant[0m:
+"[\n  { \"question\": \"What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the other?\" },\n  { \"question\": \"How would you optimize power consumption in a battery-operated IoT device without compromising functionality?\" },\n  { \"question\": \"..."
+
+[1mUser[0m:
+"You are an expert in general software engineering. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.\n\nQ1: What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the othe..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T14:36:29.791808Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "[\n  { \"question\": \"What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the other?\", \"score\": 9, \"feedback\": \"The answer accurately highlights the differences and use cases for MQTT and CoAP, demonstrating a strong understanding. However, it could briefly mention MQTT's reliance on TCP and CoAP's UDP-based nature.\" },\n  { \"question\": \"How would you optimize power consumption in a battery-operated IoT device without compromising functionality?\", \"score\": 8, \"feedback\": \"The answer covers key strategies effectively but could elaborate on how adaptive sensing algorithms work in practice or mention specific low-power hardware examples.\" },\n  { \"question\": \"Explain the challenges of implementing end-to-end security in IoT systems and propose a solution.\", \"score\": 9, \"feedback\": \"The answer identifies challenges clearly and proposes a robust solution. It could briefly discuss the trade-offs between security and performance in constrained devices.\" },\n  { \"question\": \"What strategies would you use to handle data from millions of IoT devices in real-time while ensuring low latency?\", \"score\": 10, \"feedback\": \"The answer is comprehensive, mentioning edge computing, scalable infrastructure, and real-time processing platforms. It effectively addresses the challenge.\" },\n  { \"question\": \"How do you approach firmware updates for IoT devices deployed in remote or hard-to-reach locations?\", \"score\": 9, \"feedback\": \"The answer provides a detailed approach to OTA updates, including security and efficiency considerations. It could briefly mention testing strategies for updates before deployment.\" }\n]"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 5.378240326s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 778
+    completion_tokens: 335
+    total_tokens: 1113
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+
+  2025-08-06T14:38:26.513455Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 1203
+  messages:
+
+[1mSystem[0m:
+"You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+[1mAssistant[0m:
+"[\n  { \"question\": \"What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the other?\" },\n  { \"question\": \"How would you optimize power consumption in a battery-operated IoT device without compromising functionality?\" },\n  { \"question\": \"..."
+
+[1mUser[0m:
+"You are an expert in general software engineering. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.\n\nQ1: What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the othe..."
+
+[1mAssistant[0m:
+"[\n  { \"question\": \"What are the key differences between MQTT and CoAP protocols in IoT communication, and when would you choose one over the other?\", \"score\": 9, \"feedback\": \"The answer accurately highlights the differences and use cases for MQTT and CoAP, demonstrating a strong understanding. Howev..."
+
+[1mUser[0m:
+"You are an expert assessment generator.\n\n          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in IoT. Each question should be concise and answerable in a few sentences.\n\n          Output format:\n          [\n            { \"question\": \"...\" },\n            { \"..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T14:39:00.025937Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "```json\n[\n  { \"question\": \"How would you design an IoT architecture to ensure seamless interoperability between heterogeneous devices from different manufacturers?\" },\n  { \"question\": \"What are the critical considerations when implementing machine learning at the edge in resource-constrained IoT devices?\" },\n  { \"question\": \"Explain how you would mitigate the risks of a large-scale IoT botnet attack while maintaining device performance and functionality.\" },\n  { \"question\": \"Describe an optimal strategy for implementing zero-touch provisioning in industrial IoT deployments with thousands of devices.\" },\n  { \"question\": \"How would you address the challenge of maintaining data consistency in a distributed IoT system with intermittent connectivity?\" }\n]\n```"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 33.514592048s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 1199
+    completion_tokens: 140
+    total_tokens: 1339
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+

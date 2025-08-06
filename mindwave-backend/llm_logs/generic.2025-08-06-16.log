@@ -1,0 +1,198 @@
+  2025-08-06T16:12:33.025641Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 280
+  messages:
+
+[1mSystem[0m:
+"You are a problem decomposition agent for a decentralized intelligence platform called Mindwave. Your job is to analyze complex problems and break them into modular sub-tasks, tagging each sub-task with its relevant field of expertise. Respond only with valid JSON."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance?\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be specific, solvable independentl..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T16:12:37.855365Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "[\n  {\n    \"subtask\": \"Identify and evaluate technological solutions for reducing air pollution, such as electric vehicles, air filtration systems, and renewable energy sources.\",\n    \"field\": \"energy\"\n  },\n  {\n    \"subtask\": \"Assess the economic feasibility of implementing these technologies, including cost-benefit analysis and potential funding mechanisms.\",\n    \"field\": \"economics\"\n  },\n  {\n    \"subtask\": \"Conduct surveys and focus groups to understand public perception and social acceptance of proposed pollution-reduction technologies.\",\n    \"field\": \"environment\"\n  }\n]"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 4.830351192s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 267
+    completion_tokens: 119
+    total_tokens: 386
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+
+  2025-08-06T16:35:47.035612Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 628
+  messages:
+
+[1mSystem[0m:
+"You are a problem decomposition agent for a decentralized intelligence platform called Mindwave. Your job is to analyze complex problems and break them into modular sub-tasks, tagging each sub-task with its relevant field of expertise. Respond only with valid JSON."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance?\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be specific, solvable independentl..."
+
+[1mAssistant[0m:
+"[\n  {\n    \"subtask\": \"Identify and evaluate technological solutions for reducing air pollution, such as electric vehicles, air filtration systems, and renewable energy sources.\",\n    \"field\": \"energy\"\n  },\n  {\n    \"subtask\": \"Assess the economic feasibility of implementing these technologies, includ..."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance?\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be specific, solvable independentl..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T16:35:58.795097Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "[\n  {\n    \"subtask\": \"Evaluate existing and emerging technologies for reducing urban air pollution, such as electric vehicles, green infrastructure, and air quality monitoring systems.\",\n    \"field\": \"technology\"\n  },\n  {\n    \"subtask\": \"Conduct a cost-benefit analysis of implementing pollution-reduction technologies, considering initial investment, maintenance costs, and long-term economic impact.\",\n    \"field\": \"economics\"\n  },\n  {\n    \"subtask\": \"Assess public attitudes and social acceptance of proposed technologies through surveys, focus groups, and community engagement programs.\",\n    \"field\": \"social\"\n  },\n  {\n    \"subtask\": \"Analyze the environmental impact and effectiveness of selected technologies in reducing air pollution in urban areas.\",\n    \"field\": \"environment\"\n  }\n]"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 11.760643187s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 602
+    completion_tokens: 163
+    total_tokens: 765
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+
+  2025-08-06T16:51:56.670778Z  INFO alith_interface::requests::completion::request: 
+CompletionRequest:
+  total_prompt_tokens: 1026
+  messages:
+
+[1mSystem[0m:
+"You are a problem decomposition agent for a decentralized intelligence platform called Mindwave. Your job is to analyze complex problems and break them into modular sub-tasks, tagging each sub-task with its relevant field of expertise. Respond only with valid JSON."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance?\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be specific, solvable independentl..."
+
+[1mAssistant[0m:
+"[\n  {\n    \"subtask\": \"Identify and evaluate technological solutions for reducing air pollution, such as electric vehicles, air filtration systems, and renewable energy sources.\",\n    \"field\": \"energy\"\n  },\n  {\n    \"subtask\": \"Assess the economic feasibility of implementing these technologies, includ..."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance?\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be specific, solvable independentl..."
+
+[1mAssistant[0m:
+"[\n  {\n    \"subtask\": \"Evaluate existing and emerging technologies for reducing urban air pollution, such as electric vehicles, green infrastructure, and air quality monitoring systems.\",\n    \"field\": \"technology\"\n  },\n  {\n    \"subtask\": \"Conduct a cost-benefit analysis of implementing pollution-redu..."
+
+[1mUser[0m:
+"\nA user has submitted the following complex problem:\n\n\"How can we reduce urban air pollution in large cities using technology while considering economic feasibility and social acceptance? Use of IoT could be great\"\n\nBreak this problem down into 3 to 4 modular sub-tasks. Each sub-task should be speci..."
+
+  stop_sequences: []
+  grammar_string: None
+  config: 
+    model_ctx_size: 8192
+    inference_ctx_size: 4096
+    requested_response_tokens: Some(4076)
+    actual_request_tokens: Some(4076)
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    retry_after_fail_n_times: 3
+    increase_limit_on_fail: false
+    cache_prompt: false
+  tools: []
+    at crates/interface/src/requests/completion/request.rs:93
+
+  2025-08-06T16:52:01.701071Z  INFO alith_interface::requests::completion::request: 
+CompletionResponse:
+    content: "[\n  {\n    \"subtask\": \"Design and implement IoT-based air quality monitoring systems to collect real-time pollution data across urban areas.\",\n    \"field\": \"IoT\"\n  },\n  {\n    \"subtask\": \"Evaluate the economic feasibility of deploying IoT solutions for air pollution reduction, including cost analysis and funding strategies.\",\n    \"field\": \"economics\"\n  },\n  {\n    \"subtask\": \"Assess public opinion and social acceptance of IoT technologies for air pollution management through surveys and community engagement.\",\n    \"field\": \"social\"\n  },\n  {\n    \"subtask\": \"Develop data-driven strategies using IoT-collected data to optimize pollution-reduction measures and improve urban air quality.\",\n    \"field\": \"data science\"\n  }\n]"
+    finish_reason: Eos
+    generation_settings: 
+    model: "deepseek/deepseek-chat"
+    frequency_penalty: None
+    presence_penalty: 0.0
+    temperature: 1.0
+    top_p: None
+    n_choices: 1
+    n_predict: Some(4076)
+    n_ctx: 4096
+    logit_bias: None
+    grammar: None
+    stop_sequences: []
+    timing_usage: 
+    total_time: 5.032196477s
+    prompt_processing_t: None
+    generation_t: None
+    prompt_tok_per_ms: None
+    prompt_tok_per_sec: None
+    generation_tok_per_ms: None
+    generation_tok_per_sec: None
+    token_usage: 
+    tokens_cached: None
+    prompt_tokens: 988
+    completion_tokens: 153
+    total_tokens: 1141
+    token_calls: None
+    at crates/interface/src/requests/completion/request.rs:111
+

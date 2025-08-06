@@ -1,0 +1,82 @@
+import { config } from "dotenv";
+config(); // Loads .env file
+
+import { Agent, WindowBufferMemory } from "alith";
+
+const apiKey = process.env.OPENROUTER_API_KEY;
+
+if (!apiKey) {
+    console.error("❌ OPENROUTER_API_KEY is not set in the environment!");
+    process.exit(1);
+}
+
+const agent = new Agent({
+    model: "deepseek/deepseek-chat",
+    memory: new WindowBufferMemory(),
+    apiKey: apiKey,
+    baseUrl: "https://openrouter.ai/api/v1",
+    preamble:
+        "You are an agent for a startup called Mindwave. You are tasked with helping the user with their questions and tasks.",
+});
+
+export async function getQuestions(expertise) {
+    try {
+        const questions = await agent.prompt(
+            `You are an expert assessment generator.
+
+          Generate exactly 5 JSON-formatted challenging questions based on the user's expertise in ${expertise}. Each question should be concise and answerable in a few sentences.
+
+          Output format:
+          [
+            { "question": "..." },
+            { "question": "..." },
+            ...
+          ]
+
+          Only output valid JSON. Do not include any explanations, instructions, or markdown formatting.`
+        );
+        return questions;
+    } catch (err) {
+        console.error("🚨 Error during prompt:", err);
+    }
+}
+
+export async function evaluateAnswers(
+    questions,
+    answers,
+    expertise = "general software engineering"
+) {
+    const formattedQA = questions.map((q, i) => ({
+        question: q.question,
+        answer: answers[i],
+    }));
+
+    const prompt = `
+You are an expert in ${expertise}. Given the following questions and answers, grade each answer out of 10 and provide a brief explanation for the grade.
+
+${formattedQA
+    .map((qa, i) => `Q${i + 1}: ${qa.question}\nA${i + 1}: ${qa.answer}\n`)
+    .join("\n")}
+
+Return a JSON array like:
+[
+  { "question": "...", "score": 8, "feedback": "..." },
+  ...
+]
+`.trim();
+
+    const result = await agent.prompt(prompt);
+
+    // Remove ```json or ``` if it exists
+    const cleaned = result
+        .replace(/```json/g, "")
+        .replace(/```/g, "")
+        .trim();
+
+    try {
+        return JSON.parse(cleaned);
+    } catch (err) {
+        console.error("Failed to parse LLM output:", cleaned);
+        throw err;
+    }
+}
