@@ -10,13 +10,28 @@ const router = express.Router();
 router.post("/assessment/questions", async (req, res) => {
     try {
         const { expertise } = req.body;
+        if (!expertise) {
+            return res
+                .status(400)
+                .json({ error: "Expertise field is required." });
+        }
+
         const questionsRaw = await getAssessmentQuestions(expertise);
+
+        if (!questionsRaw || typeof questionsRaw !== "string") {
+            return res.status(500).json({ error: "No questions generated." });
+        }
+
         const cleaned = questionsRaw
             .replace(/```json/g, "")
             .replace(/```/g, "")
             .trim();
+
         const questions = JSON.parse(cleaned);
-        res.json({ questions }); // <- Fixed line
+        res.json({ questions });
+
+        console.log("Expertise:", expertise);
+        console.log("questionsRaw:", questionsRaw);
     } catch (err) {
         console.error("Error fetching questions:", err);
         res.status(500).json({ error: "Something went wrong." });
