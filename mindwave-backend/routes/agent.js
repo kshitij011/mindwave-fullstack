@@ -23,6 +23,7 @@ router.post("/assessment/questions", async (req, res) => {
                 error: "Failed to generate questions. Please try again.",
             });
         }
+        console.log("Raw questions: ", questionsRaw);
 
         const cleaned = questionsRaw
             .replace(/```json/g, "")
@@ -31,9 +32,6 @@ router.post("/assessment/questions", async (req, res) => {
 
         const questions = JSON.parse(cleaned);
         res.json({ questions });
-
-        console.log("Expertise:", expertise);
-        console.log("questionsRaw:", questionsRaw);
     } catch (err) {
         console.error("Error fetching questions:", err);
         res.status(500).json({
