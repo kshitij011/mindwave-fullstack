@@ -59,7 +59,8 @@ function Assessment() {
             return alert("Please enter your field of expertise.");
         setLoading(true);
         const res = await fetch(
-            "https://mindwave-fullstack.onrender.com/api/agent/assessment/questions",
+            // "https://mindwave-fullstack.onrender.com/api/agent/assessment/questions",
+            "http://localhost:3000/api/agent/assessment/questions",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -85,7 +86,8 @@ function Assessment() {
         };
 
         const res = await fetch(
-            "https://mindwave-fullstack.onrender.com/api/agent/assessment/evaluate",
+            // "https://mindwave-fullstack.onrender.com/api/agent/assessment/evaluate",
+            "http://localhost:3000/api/agent/assessment/evaluate",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

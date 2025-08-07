@@ -19,7 +19,9 @@ router.post("/assessment/questions", async (req, res) => {
         const questionsRaw = await getAssessmentQuestions(expertise);
 
         if (!questionsRaw || typeof questionsRaw !== "string") {
-            return res.status(500).json({ error: "No questions generated." });
+            return res.status(500).json({
+                error: "Failed to generate questions. Please try again.",
+            });
         }
 
         const cleaned = questionsRaw
@@ -34,7 +36,9 @@ router.post("/assessment/questions", async (req, res) => {
         console.log("questionsRaw:", questionsRaw);
     } catch (err) {
         console.error("Error fetching questions:", err);
-        res.status(500).json({ error: "Something went wrong." });
+        res.status(500).json({
+            error: "Failed to generate questions. Please try again.",
+        });
     }
 });
 
