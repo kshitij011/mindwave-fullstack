@@ -130,46 +130,6 @@ const MyTasks = () => {
         }
     };
 
-    // Debug function to check contract state
-    const debugContractState = async () => {
-        if (!taskStorageContract || !account) return;
-
-        try {
-            console.log("=== CONTRACT STATE DEBUG ===");
-
-            // Test different fields
-            const testFields = ["IoT", "AI", "Blockchain", "Machine Learning"];
-
-            for (const field of testFields) {
-                try {
-                    const experts = await taskStorageContract.getFieldExperts(
-                        field
-                    );
-                    console.log(`Field "${field}":`, experts.length, "experts");
-                    if (experts.length > 0) {
-                        console.log(
-                            `Experts in "${field}":`,
-                            Array.from(experts)
-                        );
-                    }
-                } catch (err) {
-                    console.error(`Error checking field "${field}":`, err);
-                }
-            }
-
-            // Check if current account is registered as expert
-            const currentAccountExperts =
-                await taskStorageContract.getFieldExperts("IoT");
-            const isRegistered = currentAccountExperts.includes(account);
-            console.log(
-                "Current account registered as IoT expert:",
-                isRegistered
-            );
-        } catch (err) {
-            console.error("Debug error:", err);
-        }
-    };
-
     if (!account) {
         return (
             <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-br from-gray-100 to-gray-300 px-4">
@@ -191,16 +151,6 @@ const MyTasks = () => {
 
     return (
         <div className="p-6">
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold">My Tasks</h2>
-                <button
-                    onClick={debugContractState}
-                    className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 text-sm"
-                >
-                    Debug Contract
-                </button>
-            </div>
-
             {loading ? (
                 <div className="space-y-4">
                     <div className="h-24 w-full bg-gray-200 animate-pulse rounded-md" />

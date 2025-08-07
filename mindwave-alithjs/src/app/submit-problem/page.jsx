@@ -11,6 +11,7 @@ export default function SubmitProblem() {
     const [subtasks, setSubtasks] = useState([]);
     const { taskStorageContract } = useContract();
     const [isSavedToBlockchain, setIsSavedToBlockchain] = useState(false);
+    const [isSavingToBlockchain, setIsSavingToBlockchain] = useState(false);
 
     const { account, connectWallet, isConnecting } = useWallet();
 
@@ -32,7 +33,8 @@ export default function SubmitProblem() {
 
         try {
             const res = await fetch(
-                "http://localhost:3000/api/agent/assessment/decompose",
+                // "http://localhost:3000/api/agent/assessment/decompose",
+                "https://mindwave-fullstack.onrender.com/api/agent/assessment/decompose",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -120,9 +122,14 @@ export default function SubmitProblem() {
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="my-4 bg-white shadow-2xl rounded-3xl p-6 w-full max-w-3xl">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">
+                <h1 className="text-3xl font-bold text-gray-800 mb-1">
                     Submit a Problem
                 </h1>
+                <p className="text-gray-600 mb-6 text-sm italic">
+                    e.g: How can we reduce urban air pollution in large cities
+                    using technology while considering economic feasibility and
+                    social acceptance?
+                </p>
 
                 {subtasks.length === 0 && (
                     <>
@@ -185,7 +192,9 @@ export default function SubmitProblem() {
                             onClick={handleSaveToBlockchain}
                             className="mt-6 w-full py-3 rounded-xl text-lg font-semibold text-white bg-green-600 hover:bg-green-700"
                         >
-                            Save to Blockchain
+                            {isSavingToBlockchain
+                                ? "Saving to Blockchain..."
+                                : "Save to Blockchain"}
                         </button>
                     )}
 

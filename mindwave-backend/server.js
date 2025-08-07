@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 3000;
 // ✅ Enable CORS for requests from localhost:3001 (your frontend)
 app.use(
     cors({
-        origin: ["http://localhost:3001", "https://your-frontend-domain.com"],
+        origin: [
+            "http://localhost:3001",
+            "https://mindwave-fullstack.vercel.app/",
+        ],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })

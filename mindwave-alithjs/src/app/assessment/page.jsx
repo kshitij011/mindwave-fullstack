@@ -119,7 +119,7 @@ function Assessment() {
             await tx.wait(); // wait for transaction to be mined
             console.log("Transaction confirmed!");
             setIsRegistered(true); // mark as registered
-            alert("Successfully registered as expert in " + expertise + "!");
+            // alert("Successfully registered as expert in " + expertise + "!");
         } catch (err) {
             console.error("Error registering as expert:", err);
             alert("Failed to register as expert: " + err.message);
