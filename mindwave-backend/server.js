@@ -24,3 +24,5 @@ app.use("/api/agent", agentRoutes);
 app.listen(PORT, () => {
     console.log(`🚀 Server listening on http://localhost:${PORT}`);
 });
+
+// OPENROUTER_API_KEY=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
